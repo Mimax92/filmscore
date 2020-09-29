@@ -116,7 +116,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/home/projekty/projekt_1/static/
+STATIC_ROOT = '/home/projekty/projekt_1/static/'
 
 STATICFILES_DIRS = ['static']
 
