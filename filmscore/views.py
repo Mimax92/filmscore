@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.views import View
-from .models import Film, ExtraInfo, Rating, Actor
+from .models import Film, ExtraInfo, Rating
 from django.shortcuts import redirect
 from .forms import FilmForm, CreateUserForm, ExtraInfoForm, RatingForm
 from django.views.generic import UpdateView, DeleteView
@@ -65,11 +64,9 @@ class AddMovie(LoginRequiredMixin, View):
         form = FilmForm(request.POST or None, request.FILES or None)
         form_extra = ExtraInfoForm(request.POST or None, request.FILES or None)
         if all((form.is_valid(), form_extra.is_valid())):
-            film = form.save(commit=False)
-            extra = form_extra.save()
-            film.extra_data = extra
-            film.save()
             form_extra.save()
+            form.save()
+            return redirect('all-movies')
         return render(request, 'new_film.html', {"form": form, "form_extra": form_extra})
 
 
@@ -98,6 +95,7 @@ class EditMovie(LoginRequiredMixin, UpdateView):
 
 
 class DelMovie(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
+    permission_required = "filmscore.delate_film"
     model = Film
     template_name = "del_film.html"
     success_url = 'film_id'

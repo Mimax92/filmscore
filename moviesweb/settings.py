@@ -116,12 +116,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = '/home/projekty/projekt_1/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = ['static']
+# STATICFILES_DIRS = ['static']
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'my_media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'my_media')
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'all-movies'
