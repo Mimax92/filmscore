@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load bootstrap %}
+{% block title%}Edit film{% endblock %}
+
+{% block content%}
+<div class="card" style="width: 36rem;">
+  <div class="card-body">
+    <h5 class="card-title">Edit movie extra </h5>
+<form action="{% url 'edit-movie-extra' object.pk %}" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    {{ field|bootstrap }}
+    {% endfor %}
+        <button type="submit" class="btn btn-primary" >Edit</button>
+
+
+</form>
+  </div>
+</div>
+<a href="{% url 'all-movies' %}">BACK</a>
+{% endblock %}
+
+

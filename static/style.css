@@ -1,0 +1,15 @@
+body {
+    padding: 2rem;
+}
+.film-dis {
+    margin-left: 15px;
+}
+.film-photo {
+    width: 250px;
+    float: left;
+    text-align: center;
+}
+.card {
+    width: 36rem;
+}
+

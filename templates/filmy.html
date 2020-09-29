@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title%}Film list{% endblock %}
+
+{% block content%}
+
+
+
+    <p><a href="{% url 'add-movie' %}" class="btn btn-primary">Add new film <i class="fas fa-plus"></i></a></p>
+        {% if movies|length == 0 %}
+    <h2> No films</h2>
+        {% else %}
+<!--    <h2>Ilość filmów w bazie danych: {{ movies|length }}</h2>-->
+    <h2>Movies</h2>
+        {% for film in movies %}
+
+
+        <div class="card" >
+
+          <div class="card-body"><a href="{% url 'movie-view' film.id %}"
+                       ><img src="/media/{{ film.poster }}" class="film-photo" ></a>
+              <div class="row">
+                <div class="col-9"
+                    <h5 class="card-title">{{ film }}</h5>
+                </div>
+                <div class="col-3">
+                    <a href="{% url 'del-movie' film.id %}"
+                       ><i class="fas fa-trash-alt"></i></a>
+                    <a href="{% url 'edit-movie' film.id %}"
+                       ><i class="fas fa-edit"></i></a>
+                    <a href="{% url 'movie-view' film.id %}"
+                       ><i class="fas fa-info"></i>
+</a>
+                </div>
+              </div>
+            <div class="row">
+            <p class="film-dis" class="card-text" >{{ film.description }}</p>
+            </div>
+
+          </div>
+        </div>
+
+        {% endfor %}
+    {% endif %}
+{% endblock %}

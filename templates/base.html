@@ -1,0 +1,30 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title%}{% endblock %}</title>
+    <!--        <link rel="stylesheet" href="/static/w3.css">-->
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/61fa38129b.js" crossorigin="anonymous"></script>
+
+<body>
+<hr>
+
+
+<div class="jumbotron">
+    {% if user.is_authenticated %}
+  <h1 class="display-4">Hello {{ user.username }} !!</h1>
+
+<p><a href="{% url 'logout' %}" class="btn btn-success">Logout <i class="fas fa-2x fa-sign-out-alt"></i></a></p>
+{% else %}
+<p><a href="{% url 'login' %}" class="btn btn-success">Login <i class="fas fa-2x fa-sign-in-alt"></i></a></p>
+{% endif %}
+</div>
+{% block content%}
+{% endblock %}
+
+</body>
+</html>
