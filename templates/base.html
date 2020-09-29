@@ -17,11 +17,14 @@
 <div class="jumbotron">
     {% if user.is_authenticated %}
   <h1 class="display-4">Hello {{ user.username }} !!</h1>
+    <hr>
+    <h1><a href="{% url 'create-user' %}">Create User</a></h1>
 
 <p><a href="{% url 'logout' %}" class="btn btn-success">Logout <i class="fas fa-2x fa-sign-out-alt"></i></a></p>
 {% else %}
 <p><a href="{% url 'login' %}" class="btn btn-success">Login <i class="fas fa-2x fa-sign-in-alt"></i></a></p>
 {% endif %}
+    <h1><a href="{% url 'create-user' %}">Create User</a></h1>
 </div>
 {% block content%}
 {% endblock %}
