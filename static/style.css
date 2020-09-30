@@ -5,9 +5,8 @@ body {
     margin-left: 15px;
 }
 .film-photo {
-    width: 250px;
+    width: 150px;
     float: left;
-    text-align: center;
 }
 .card {
     width: 36rem;
