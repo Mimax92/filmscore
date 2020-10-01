@@ -11,6 +11,7 @@ class FilmAdmin(admin.ModelAdmin):
     list_filter = ("year",)
     search_fields = ("title", "description")
 
+
 admin.site.register(ExtraInfo)
 admin.site.register(Rating)
 admin.site.register(Actor)

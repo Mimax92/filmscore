@@ -11,13 +11,16 @@ from rest_framework import viewsets
 from django.contrib.auth.models import User
 from .serializers import UserSerializer, FilmSerializer
 
+
 class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+
 class FilmView(viewsets.ModelViewSet):
     queryset = Film.objects.all()
     serializer_class = FilmSerializer
+
 
 class Allmovies(View):
     def get(self, request):

@@ -11,7 +11,6 @@ router = routers.DefaultRouter()
 router.register(r'users', UserView)
 router.register(r'films', FilmView)
 
-
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('films/', include('filmscore.urls')),

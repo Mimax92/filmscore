@@ -4,8 +4,8 @@
 {% block content %}
 <form action="{% url 'create-user' %}" method="POST">
     <table>
-    {% csrf_token %}
-    {{ form|bootstrap }}
+        {% csrf_token %}
+        {{ form|bootstrap }}
     </table>
     <input type="submit" value="Create User">
 </form>

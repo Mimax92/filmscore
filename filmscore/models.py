@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import date
 
+
 class ExtraInfo(models.Model):
     TYPE = {
         (0, 'Other'),
@@ -21,7 +22,6 @@ class ExtraInfo(models.Model):
 
     def genres_title(self):
         return '{} {}'.format(self.genres, self.runtime)
-    
 
 
 class Film(models.Model):
@@ -40,11 +40,11 @@ class Film(models.Model):
     def year_title(self):
         return '{} {}'.format(self.title, self.year)
 
+
 class Rating(models.Model):
     review = models.TextField(default="", blank=True)
     stars = models.PositiveSmallIntegerField(default=3)
     film = models.ForeignKey(Film, on_delete=models.CASCADE)
-
 
 
 class Actor(models.Model):
@@ -52,5 +52,3 @@ class Actor(models.Model):
     surname = models.CharField(max_length=128)
     year_of_birth = models.DateField(default=date.today)
     films = models.ManyToManyField(Film)
-
-

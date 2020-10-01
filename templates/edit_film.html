@@ -4,21 +4,21 @@
 
 {% block content%}
 <div class="card" style="width: 36rem;">
-  <div class="card-body">
-    <h5 class="card-title">Edit movie</h5>
-<form action="{% url 'edit-movie' object.pk %}" method="POST" enctype = 'multipart/form-data'>
-    {% csrf_token %}
-    {% for field in form %}
-    {{ field|bootstrap }}
-    {% endfor %}
+    <div class="card-body">
+        <h5 class="card-title">Edit movie</h5>
+        <form action="{% url 'edit-movie' object.pk %}" method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            {% for field in form %}
+            {{ field|bootstrap }}
+            {% endfor %}
 
-        <button type="submit" class="btn btn-primary" >Edit</button>
+            <button type="submit" class="btn btn-primary">Edit</button>
 
 
-</form>
-      <hr>
-      <a href="{% url 'edit-movie-extra' object.pk %}">Edit extra info</a>
-  </div>
+        </form>
+        <hr>
+        <a href="{% url 'edit-movie-extra' object.pk %}">Edit extra info</a>
+    </div>
 </div>
 <a href="{% url 'all-movies' %}">BACK</a>
 {% endblock %}
