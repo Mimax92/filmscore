@@ -8,3 +8,5 @@ Functionalities (below you can find screens from page)
 2. Adding films
 3. Rating and review films
 4. Edit films
+
+As part of the practice, I also put this page on the herok
