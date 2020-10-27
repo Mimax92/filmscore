@@ -11,13 +11,22 @@ Functionalities (below you can find screens from page)
 5. Homepage film list
 ...
 1. Login and user creation
+
 ![](fotordm/usercreate.png)
+
 2. Adding films
+
 ![](fotordm/addfilm.png)
+
 3. Rating and review films
+
 ![](fotordm/rateandreview.png)
+
 4. Edit films
+
 ![](fotordm/editfilm.png)
+
 5. Homepage film list
+
 ![](fotordm/homepage.png)
 
