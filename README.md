@@ -9,7 +9,9 @@ Functionalities (below you can find screens from page)
 3. Rating and review films
 4. Edit films
 5. Homepage film list
-...
+
+........
+
 1. Login and user creation
 
 ![](fotordm/usercreate.png)
